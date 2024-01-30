@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": [".astric/vite/vite.config.ts", "FrontEnd/config.json", ".astric/config/fronEnd.json"]
+}

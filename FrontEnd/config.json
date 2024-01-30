@@ -1,0 +1,23 @@
+{
+
+    "websocket": false,
+    "ws_time": 3,
+    "ws_url": "ws://localhost:8000",
+    "api_url": "http://localhost:3000/",
+    "request_timeuot_sec": 10,
+    "user": "dev",
+    "mensajes": {
+        "fallo_conexion": "Servidor no encontrado",
+        "fallo_ruta": "Ruta no encontrada",
+        "fallo_timeuot": "Tiempo máximo de espera exedido",
+        "fallo_default": "Error desconocido"
+    },
+    "menu": {
+        "menu_database_enable": false,
+        "menu_databases_name": "SUCURSALES"
+    },
+    "db": {
+        "default": "daira",
+        "name": "DAIRA"
+    }
+}

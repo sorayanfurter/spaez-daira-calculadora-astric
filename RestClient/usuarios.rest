@@ -1,0 +1,30 @@
+
+@HOST=http://localhost:3000/
+@TOKEN=admin
+
+### Request de prueba
+
+### Login de usuario
+POST {{HOST}}ASTRIC/usuarioLoguin HTTP/1.1
+Content-Type: application/json
+
+{
+	"usuario": "dev",
+	"clave": "123456"
+}
+
+###Alta de usuarios
+POST {{HOST}}ASTRIC/usuarioAlta HTTP/1.1
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "apellido": "Invitado",
+  "nombre":"Invitado",
+  "pass": "123456",
+  "usuario": "guest",
+  "admin": true,
+  "id": 1,
+  "idrol": "60db9413e0aa31473599557b"
+}
+

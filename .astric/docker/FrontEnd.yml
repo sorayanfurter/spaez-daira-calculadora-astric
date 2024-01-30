@@ -1,0 +1,21 @@
+version: '3.7'
+
+
+services:
+  FrontEnd:
+    image: 'node:19.9.0-alpine3.17'
+    container_name: 'ASTRIC-${CONAINER_NAME}-FrontEnd'
+    user: ${USER}
+    environment:
+      - NODE_ENV=production
+    ports:
+    - "${FRON_FIREWALL}:8080" #Front map port
+    entrypoint: >
+      sh -c "
+             mkdir -p /app
+             cp -r /repo /app &&
+             cd /app/repo &&
+             npm i &&
+             npm run prod"
+    volumes:
+      - "../../:/repo"

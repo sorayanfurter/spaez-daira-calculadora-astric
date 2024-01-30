@@ -1,0 +1,24 @@
+
+deploy-BackeEnd:
+  stage: deploy
+  only: 
+    - server
+  tags:
+    - prod
+  script:
+    - sudo docker-compose --env-file ./.astric/config/server.env -f ./.astric/docker/BackEnd.yml down
+    - sudo ./.astric/cli/deploy.sh
+    - sudo docker-compose --env-file ./.astric/config/server.env -f ./.astric/docker/BackEnd.yml up -d
+  environment: production
+
+deploy-FrontEnd:
+  stage: deploy
+  needs: ["deploy-BackeEnd"]
+  only: 
+    - server
+  tags:
+    - prod
+  script:
+    - sudo docker-compose --env-file ./.astric/config/server.env -f ./.astric/docker/FrontEnd.yml down
+    - sudo docker-compose --env-file ./.astric/config/server.env -f ./.astric/docker/FrontEnd.yml up -d
+  environment: production

@@ -1,0 +1,93 @@
+{
+    "errorLens.messageBackgroundMode": "line",
+    "errorLens.borderRadius": "5px",
+    "errorLens.statusBarColorsEnabled": true,
+    "errorLens.statusBarMessageType": "activeLine",
+    "go.lintOnSave": "workspace",
+    "go.vetOnSave": "workspace",
+    "go.buildOnSave": "workspace",
+    "go.lintTool": "golangci-lint",
+    "go.formatTool": "goimports",
+    "go.lintFlags": [
+        "--enable=gocognit",
+        "--enable=golint",
+        "--enable=gosec",
+        "--exclude=G104",
+        "--enable=goimports",
+        "--exclude-use-default=false"
+    ],
+    "go.useLanguageServer": true,
+    "go.languageServerFlags": ["-rpc.trace", "serve", "--debug=localhost:6060"],
+    "gopls": {
+        "usePlaceholders": true,
+        "completeUninmported": true,
+        "staticcheck": true
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "go.coverOnSave": true,
+    "go.coverOnSingleTest": true,
+    "go.coverOnSingleTestFile": true,
+    "go.editorContextMenuCommands": {
+        "removeTags": true,
+        "fillStruct": true,
+        "testFile": true,
+        "testPackage": true,
+        "generateTestForFile": true,
+        "generateTestForPackage": true,
+        "benchmarkAtCursor": true
+    },
+    "go.testTimeout": "60s",
+    "go.gocodeFlags": ["-builtin", "-ignore-case", "-unimported-packages"],
+    "go.coverShowCounts": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "git.autofetch": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "excalidraw.theme": "dark",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.editorAssociations": {
+        "*.erd": "default"
+    },
+    "editor.renderWhitespace": "all",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "vscode.markdown-math",
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    },
+    "git.confirmSync": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "both",
+    "svelte.enable-ts-plugin": true,
+    "editor.formatOnSave": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "msg.shell.enforceHttps": false,
+    "errorLens.enabled": true,
+    "errorLens.enabledInMergeConflict": true,
+    "errorLens.enabledDiagnosticLevels": ["error", "warning", "info"],
+    "errorLens.severityText": ["ERROR", "WARNING", "INFO", "HINT"],
+    "errorLens.statusBarIconsEnabled": true,
+    "errorLens.statusBarMessageEnabled": true
+}

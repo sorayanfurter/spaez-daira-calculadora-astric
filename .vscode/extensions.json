@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "dineug.vuerd-vscode",
+        "usernamehw.errorlens",
+        "dbaeumer.vscode-eslint",
+        "pomdtr.excalidraw-editor",
+        "eamodio.gitlens",
+        "golang.go",
+        "stringham.move-ts",
+        "christian-kohler.path-intellisense",
+        "esbenp.prettier-vscode",
+        "humao.rest-client",
+        "MS-CEINTL.vscode-language-pack-es",
+        "rafamel.subtle-brackets",
+        "fivethree.vscode-svelte-snippets",
+        "svelte.svelte-vscode",
+        "ardenivanov.svelte-intellisense",
+        "tomoki1207.pdf"
+    ]
+}

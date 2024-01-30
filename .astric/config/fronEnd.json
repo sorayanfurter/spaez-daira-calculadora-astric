@@ -1,0 +1,16 @@
+{
+    "port": 8080,
+    "host": "0.0.0.0",
+    "cords": {
+        "origin": "*",
+        "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+        "preflightContinue": false,
+        "optionsSuccessStatus": 204
+    },
+    "websocket": false,
+    "ws_time": 3,
+    "ws_url": "ws://192.168.0.1/",
+    "api_url": "http://192.168.0.1/",
+    "request_timeuot_sec": 10,
+    "loguin": true
+}
