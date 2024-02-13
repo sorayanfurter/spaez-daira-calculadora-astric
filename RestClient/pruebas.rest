@@ -1,0 +1,6 @@
+
+
+### Prueba
+GET http://localhost:3000/clientes/prueba HTTP/1.1
+Database: prueba
+Authorization: dev

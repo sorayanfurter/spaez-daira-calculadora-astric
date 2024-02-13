@@ -15,14 +15,14 @@ func LoadConfigENV() *env.Default {
 
 	var Config env.Default
 
-	Config.APIEnanle = true         //Activa el servidor API
-	Config.WSEnable = false         //Activa el servidor WebSocket
-	Config.DOCEnable = false        //Activa el servidor de documentacion
-	Config.MYSQLHost = "25.0.0.10"  //Host de mysql
-	Config.MYSQLPass = "6686566865" //Password mysql
-	Config.MYSQLPort = 3301         //Puerto de mysql
-	Config.MYSQLUser = "root"       // Usuairo de mysql
-	Config.MONGOURL = ""            //Cadena de conexion de mysql
+	Config.APIEnanle = true        //Activa el servidor API
+	Config.WSEnable = false        //Activa el servidor WebSocket
+	Config.DOCEnable = false       //Activa el servidor de documentacion
+	Config.MYSQLHost = "localhost" //Host de mysql
+	Config.MYSQLPass = "66865"     //Password mysql
+	Config.MYSQLPort = 3306        //Puerto de mysql
+	Config.MYSQLUser = "root"      // Usuairo de mysql
+	Config.MONGOURL = ""           //Cadena de conexion de mysql
 
 	return &Config
 
