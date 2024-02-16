@@ -13,6 +13,9 @@ func RutasPrincipales(rout *mux.Router) {
 
 	routClintes := routes.NewPrefix(rout, "/clientes", "Modulo de Clientes")
 	routClintes.Use(middleware.ProcesarRutas)
+	routCalculadora := routes.NewPrefix(rout, "/calculadora", "Modulo de Calculadora")
+	routCalculadora.Use(middleware.ProcesarRutas)
+
 	routersInformes := routes.NewRouter(routClintes)
 	rClientes.RutasModulo(routersInformes)
 
