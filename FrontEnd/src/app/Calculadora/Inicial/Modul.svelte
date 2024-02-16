@@ -52,10 +52,11 @@
                 try {
                     console.log('Fetching history...');
                     const response: AxiosResponse<{ resultado: number }> = await axios.post('http://localhost:3030/Calcular', {
-                        // n1: parseFloat(input.split(" ")[0]),
-                        // n2: parseFloat(input.split(" ")[2]),
+                        //  n1: parseFloat(input.split(" ")[0]),
+                        //  n2: parseFloat(input.split(" ")[2]),
                         operacion: input.split(' ')[1],
                     });
+
                     console.log('Response status:', response.status);
                     console.log('Response data:', response.data);
                     result = response.data.resultado;
