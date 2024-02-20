@@ -3,6 +3,7 @@ package controllers
 import (
 	"ASTRIC/BackEnd/api/calculadora/models"
 	"ASTRIC/BackEnd/shared/ep"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"math"
@@ -16,6 +17,11 @@ func CalculadoraHandler(w http.ResponseWriter, r *http.Request) {
 
 	var request models.CalculadoraRequest
 
+	//Decodifico el body en el request que recibe un puntero.
+
+	json.NewDecoder(r.Body).Decode(&request)
+	response := ep.NewResponse("Resultado de calculo", w)
+
 	defer ep.ErrorControlResponse("/calculadora/Calcular", w, r)
 
 	switch request.Operacion {
@@ -27,7 +33,6 @@ func CalculadoraHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		// Guardar en historial
-
 		historyEntry := models.HistoryEntry{
 			Fecha:     time.Now().Format("2006-01-02"),
 			Operacion: fmt.Sprintf("%.2f %s %.2f", request.N1, request.Operacion, request.N2),
@@ -35,13 +40,15 @@ func CalculadoraHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		history = append(history, historyEntry)
 
-		response := ep.NewResponse("Resultado de calculo", w)
 		var resultado models.CalculadoraResponse
 
 		resultado.Resultado = result
+		resultado.History = history
 		response.DatoSend(resultado)
+
 	default:
-		http.Error(w, "operación no válida", http.StatusBadRequest)
+		response.ErrSend("operación no válida")
+
 	}
 }
 

@@ -1,7 +1,23 @@
 
 
-### Prueba
-GET http://localhost:3000/clientes/prueba HTTP/1.1
-Database: prueba
-Authorization: dev
+@HOST=http://localhost:3000
+@TOKEN=admin
+
+### Prueba de calculadora
+POST {{HOST}}/calculadora/Calcular HTTP/1.1
+
+{
+    "n1": 5,
+    "n2":5,
+    "operacion": "+"
+}
+
+### Prueba de calculadora
+GET {{HOST}}/calculadora/Historial HTTP/1.1
+
+
+
+
+
+
 

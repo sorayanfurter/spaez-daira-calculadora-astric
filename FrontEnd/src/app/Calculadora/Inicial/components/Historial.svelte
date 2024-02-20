@@ -13,8 +13,8 @@
 <div>
     <h2>Historial</h2>
     <ul>
-        {#each history as entry}
-            <li>{entry.fecha} - {entry.operacion} = {entry.resultado}</li>
+        {#each history as data}
+            <li>{data.fecha} - {data.operacion} = {data.resultado}</li>
         {/each}
     </ul>
 </div>

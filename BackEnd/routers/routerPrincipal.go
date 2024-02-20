@@ -2,8 +2,8 @@ package routers
 
 import (
 	"ASTRIC/BackEnd/ASTRIC/helper/routes"
-	"ASTRIC/BackEnd/ASTRIC/middleware"
-	rClientes "ASTRIC/BackEnd/api/clientes/routes"
+	//"ASTRIC/BackEnd/ASTRIC/middleware"
+	rCalculadora "ASTRIC/BackEnd/api/calculadora/routes"
 
 	"github.com/gorilla/mux"
 )
@@ -14,11 +14,11 @@ func RutasPrincipales(rout *mux.Router) {
 	//routClintes := routes.NewPrefix(rout, "/clientes", "Modulo de Clientes")
 	//routClintes.Use(middleware.ProcesarRutas)
 	routCalculadora := routes.NewPrefix(rout, "/calculadora", "Modulo de Calculadora")
-	routCalculadora.Use(middleware.ProcesarRutas)
+	//routCalculadora.Use(middleware.ProcesarRutas)
 
 	//routersInformes := routes.NewRouter(routClintes)
-	routersInformes := routes.NewRouter(routCalculadora)
+	routersCalculadora := routes.NewRouter(routCalculadora)
 
-	rClientes.RutasModulo(routersInformes)
+	rCalculadora.RutasModulo(routersCalculadora)
 
 }

@@ -9,7 +9,8 @@ type CalculadoraRequest struct {
 
 //Estructura Calculadora Response
 type CalculadoraResponse struct {
-	Resultado float64 `json:"resultado"`
+	Resultado float64        `json:"resultado"`
+	History   []HistoryEntry `json:"history"`
 }
 
 //Estructura entrada historial
