@@ -46,8 +46,10 @@
     async function fetchHistory() {
         try {
             http.get('calculadora/Historial')
-                .then(response => {
-                    history = response.data;
+                .then((response: any) => {
+                    if (response.datos !== null) {
+                        history = response.datos;
+                    }
                 })
                 .catch(error => {
                     console.error('Error fetching history:', error);
@@ -84,18 +86,19 @@
                             n2: parseFloat(input.split(' ')[2]),
                             operacion: input.split(' ')[1],
                         })
-                            .then(response => {
-                                console.log(response);
-                                result = response.data;
-                                /*
-                                if (response.data && response.data.resultado !== undefined) {
-                                    result = response.data.resultado;
-                                    history = response.data.history;
+                            .then((response: any) => {
+                                const datos = response.datos;
+                                if (datos && datos.resultado !== undefined) {
+                                    result = datos.resultado;
+
+                                    if (datos.history !== undefined) {
+                                        history = datos.history;
+                                    }
+
                                     input = '';
-                                    fetchHistory();
                                 } else {
                                     console.error('Invalid response structure:', response);
-                                }*/
+                                }
                             })
                             .catch((err: any) => {
                                 console.log(err);
@@ -159,7 +162,6 @@
                             <th class="border-b-2 border-gray-400 py-2 text-center">Resultado</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         {#if history && history.length > 0}
                             {#each history as dato}
